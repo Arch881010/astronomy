@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "ejs-static-converter": "^2.0.0",
+    "express": "^5.2.1"
+  },
+  "scripts": {
+    "dev": "node -e \"const { execSync } = require('child_process'); const run = () => { try { execSync('node compile.js', { stdio: 'inherit' }); } catch (e) { console.error(e.message); } setTimeout(run, 10000); }; run();\"",
+    "devgit": "bash -lc \"while true; do node compile.js; sleep 10; done\"",
+    "devps": "powershell -NoLogo -NoProfile -Command \"while ($true) { node compile.js; Start-Sleep -Seconds 10 }\"",
+    "start": "node compile.js"
+  }
+}
